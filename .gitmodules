@@ -4,3 +4,6 @@
 [submodule "Unpoema"]
 	path = Unpoema
 	url = https://github.com/IrvLH/Unpoema
+[submodule "ecommerce"]
+	path = ecommerce
+	url = https://github.com/IrvLH/ecommerce
