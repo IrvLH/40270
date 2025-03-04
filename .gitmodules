@@ -1,3 +1,6 @@
 [submodule "FEI-"]
 	path = FEI-
 	url = https://github.com/IrvLH/FEI-.git
+[submodule "Unpoema"]
+	path = Unpoema
+	url = https://github.com/IrvLH/Unpoema
