@@ -1,0 +1,18 @@
+<svg class="back" width="500" height="300" xmlns="http://www.w3.org/2000/svg" background-color="black">
+        <ellipse cx="130" cy="100" rx="60" ry="75" fill="grey" />
+        <ellipse cx="130" cy="70" rx="90" ry="55" fill="grey" />
+
+        <ellipse cx="100" cy="70" rx="15" ry="45" fill="yellow" />
+        <ellipse cx="150" cy="70" rx="15" ry="45" fill="yellow" />
+
+        <ellipse cx="150" cy="70" rx="5" ry="35" fill="black" />
+        <ellipse cx="100" cy="70" rx="5" ry="35" fill="black" />
+
+        
+        <polyline points="110,172 140,175 150,265 125,235 90,265" fill="red"/>
+
+        <polyline points="250,270 250,40 450,250 450,40" fill="white"/>
+        
+        
+        Sorry, your browser does not support inline SVG.
+     </svg>

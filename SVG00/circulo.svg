@@ -1,0 +1,6 @@
+<svg width="500" height="300" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="180" cy="120" r="100" stroke="purple" stroke-width="8" fill="orange" />
+        <polyline points="0,90 50,0 50,90 0,0" />
+        
+        Sorry, your browser does not support inline SVG.
+</svg>
