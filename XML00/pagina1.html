@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>página 01</title>
+</head>
+<body>
+    <label id="jj">lllsss</label>
+    <button id="sd" onclick=loadXMLDoc()>sdsd</button>
+    <table id="demo"></table>
+
+    <script>
+        function loadXMLDoc() {
+            if(document.getElementById("demo").innerHTML.length > 10){
+                document.getElementById("demo").innerHTML = " "
+            }else{
+                const xhttp = new XMLHttpRequest();
+                xhttp.onload = function() {
+                    const xmlDoc = xhttp.responseXML;
+                    const cd = xmlDoc.getElementsByTagName("alumno");
+                    myFunction(cd);
+                }
+                xhttp.open("GET", "xml00.xml");
+                xhttp.send();
+            }
+          
+        }
+        
+        function myFunction(cd) {
+          let table="<tr><th>Nombre</th><th>Apellido</th><th>Curso</th></tr>";
+          for (let i = 0; i < cd.length; i++) {
+            table += "<tr><td>" +
+            cd[i].getElementsByTagName("nombre")[0].childNodes[0].nodeValue +
+            "</td><td>" +
+            cd[i].getElementsByTagName("apellido")[0].childNodes[0].nodeValue +
+            "</td><td>"+
+            cd[i].getElementsByTagName("curso")[0].childNodes[0].nodeValue +
+            "</td></tr>";
+          }
+          document.getElementById("demo").innerHTML = table;
+        }
+    </script>
+
+</body>
+</html>
