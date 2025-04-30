@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            box-shadow:10px 20px 10px rgb(255, 0, 0);
+        }
+        figure{
+            display: inline-block;
+            text-align: center;
+            width: 250px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pictures</h1>
+
+    <div id="app"></div>
+
+    <script>
+        console.log("Imprime en consola")
+        const x  = document.getElementById("app")
+        
+        /*x.innerHTML = xc(1) + xc(10) + xc(100)
+        for (let i = 10; i < 20; i++) {
+            x.innerHTML = x.innerHTML + picture(i)
+            
+        }*/
+
+        /* funcion normal
+        function imagen(id){
+            const c = '<figure>'+
+                                '<img src="https://picsum.photos/id/'+id+'/200/200/" alt="jj">'+
+                                '<figcaption>John</figcaption>'+
+                            '</figure>'
+            return c
+        }
+
+        funcion anonima
+        const Picture = function(id){
+            const c = '<figure>'+
+                                '<img src="https://picsum.photos/id/'+id+'/200/200/" alt="jj">'+
+                                '<figcaption>John</figcaption>'+
+                            '</figure>'
+            return c
+        }*/
+        
+        //funcion anonima arrow
+        const Picture = (id) => {
+            return `<figure>
+                <img src="https://picsum.photos/id/${id}/200/200/" alt="jj">
+                <figcaption>John</figcaption>
+            </figure>`
+        };
+
+        x.innerHTML = Picture(1)+Picture(2)+Picture(3)
+
+    </script>
+</body>
+</html>
