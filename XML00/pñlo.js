@@ -1,0 +1,5 @@
+document.getElementById("app")
+console.log(x("apo"))
+console.log(xx("ko"))
+console.log(y("s"))
+console.log(z("i?"))
