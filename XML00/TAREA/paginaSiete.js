@@ -1,4 +1,4 @@
-import {muestra} from './moduloP7mostrar'
+import {muestra} from './moduloP7mostrar.js'
 
 const boton = document.getElementById("boton")
 

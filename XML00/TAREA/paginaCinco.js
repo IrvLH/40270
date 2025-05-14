@@ -1,4 +1,4 @@
-import {Picture} from './moduloP5picture'
+import {Picture} from './moduloP5picture.js'
 
 console.log("Imprime en consola")
 const x  = document.getElementById("app")

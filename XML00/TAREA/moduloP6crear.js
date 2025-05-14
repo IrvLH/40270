@@ -1,4 +1,4 @@
-import {Picture} from './moduloP6picture'
+import {Picture} from './moduloP6picture.js'
 
 export function crear(){
     const p = document.getElementById("app")

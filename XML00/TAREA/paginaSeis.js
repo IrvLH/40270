@@ -1,4 +1,4 @@
-import {crear} from './moduloP6crear'
+import {crear} from './moduloP6crear.js'
 
 function ejecutar(){
     crear()
