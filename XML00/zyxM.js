@@ -8,4 +8,4 @@ console.log(modulo1.xx("11"))
 console.log(y("2"))
 console.log(z("3"))
 
-//
+//refactorizar codigo, 
