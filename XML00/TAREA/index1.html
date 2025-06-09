@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accesibilidad</title>
+    <style>
+        nav {
+            color: antiquewhite;
+        }
+        .pesta {
+            box-shadow:3px 6px 3px rgb(255, 0, 0);
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Seccion uno</h1>
+    <button aria-label="cerrar aqui">algo</button>
+    <button aria-label="aqui repruebas">c</button>
+
+    <label for="">Nombre de usuario</label>
+    <input type="text" id="usuario" aria-describedby="instrucciones">
+    <p id="instrucciones">El usuario debe tener 6 caracteres</p>
+
+    <button aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav" hidden="true">
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Productos</a></li>
+            <li><a href="#">Servicios</a></li>
+        </ul>
+    </nav>
+
+    <div role="tablist">
+        <button id="tab1" role="tab" aria-selected="true" aria-controls="uno">Pestaña 1</button>
+        <button id="tab2" role="tab" aria-selected="false" aria-controls="dos">Pestaña 2</button>
+    </div>
+
+    <div id="uno" role="tabpanel" hidden="true">
+        <fieldset class="pesta">
+            aqui la pestaña 1111
+        </fieldset>
+    </div>
+
+    <div id="dos" role="tabpanel" hidden="true">
+        <fieldset class="pesta" >
+            aqui la pestaña 222
+        </fieldset>
+    </div>
+
+    <script>
+        const menu = document.getElementsByTagName("button")[2]
+        const ligas=document.getElementById("nav")
+        console.log(menu)
+
+        menu.addEventListener("click", ()=>{
+            if(ligas.getAttribute("hidden")){
+                menu.setAttribute("aria-expanded","true")
+                ligas.removeAttribute("hidden")
+                console.log("sin hidden "+menu.getAttribute("aria-expanded"))
+            }else{
+                menu.setAttribute("aria-expanded","false")
+                ligas.setAttribute("hidden","true")
+                console.log("hidden agregado "+menu.getAttribute("aria-expanded"))
+            }
+        })
+
+        const bPest1 = document.getElementById("tab1")
+        const bPest2 = document.getElementById("tab2")
+        const tabuno = document.getElementById("uno")
+        const tabdos = document.getElementById("dos")
+
+        /*bPest1.addEventListener("click", ()=>{
+            tabuno.removeAttribute("hidden")
+            tabdos.setAttribute("hidden","true")
+        })
+
+        bPest2.addEventListener("click", ()=>{
+            tabuno.setAttribute("hidden","true")
+            tabdos.removeAttribute("hidden")
+        })*/
+
+        bPest1.addEventListener("click", ()=>{
+            let divs = document.querySelectorAll('[role="tabpanel"]')
+            console.log(divs[0].getAttribute("hidden"))
+            let botones = document.querySelectorAll('[role="tab"]')
+            botones.forEach(b => b.setAttribute('aria-selected','false'))
+            if(divs[0].getAttribute("hidden")){
+                for (let i = 0; i < divs.length; i++) {
+                    divs[i].removeAttribute("hidden")
+                }
+            }else{
+                for (let i = 0; i < divs.length; i++) {
+                    divs[i].setAttribute("hidden","true")
+                }
+            }
+            bPest1.setAttribute('aria-selected','true')
+        })
+
+        
+
+    </script>
+</body>
+</html>

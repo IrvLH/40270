@@ -5,6 +5,7 @@ function muestra() {
 
     console.log(user.value)
     console.log(password.value)
+    window.location.href = 'pagina1.html'
 }
 
 const boton = document.getElementById("boton")
